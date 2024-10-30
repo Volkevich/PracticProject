@@ -1,0 +1,13 @@
+{% load news_tags %}
+
+
+
+<div class="list-group">
+    {% getCategories as categories %}
+    {% for category in categories %}
+        <a href="{{ category.get_absolute_url }}" class="list-group-item list-group-item-action">{{ category.title }}</a>
+    {% endfor %}
+</div>
+
+
+{#{% show_categories  arg2="User" arg1="Hello"%}#}
