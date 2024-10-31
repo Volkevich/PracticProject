@@ -1,14 +1,14 @@
 {% extends 'news/base.html' %}
+{% load static %}
 {% load news_tags %}
 
 {% block title %}
     {{ title }} :: {{ block.super }}
 {% endblock title %}
-{% block sidebar %}
 
+{% block sidebar %}
     {% include "news/inc/_sidebar.html" %}
     {#    {% show_categories %}#}
-
 {% endblock %}
 {% block content %}
 

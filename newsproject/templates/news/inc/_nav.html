@@ -1,18 +1,33 @@
+{% load static %}
+    <style>
+      .banner img {
+        width: 100%;
+        height: 100%;  /* Установим автоматическую высоту, чтобы сохранить пропорции изображения */
+        object-fit: cover; /* Обрежем изображение по высоте, чтобы соответствовало высоте баннера */
+      }
+      .navbar-brand img {
+        height: 30px; /* Установим высоту изображения */
+        margin-right: 10px; /* Добавим отступ справа от изображения */
+      }
+    </style>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}">Новости</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Главная</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'add_news' %}">Добавить новость</a></li>
-            </ul>
-        </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">
+      <img src="{% static 'images/banner.jpg' %}" alt="Новости"> Новости
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'add_news' %}">Добавить новость</a>
+        </li>
+      </ul>
     </div>
+  </div>
 </nav>
